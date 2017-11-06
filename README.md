@@ -1,7 +1,7 @@
 Yank Core staging tree
 ===============================
 
-Copyright (c) 2009-2016 Bitcoin Core Developers
+Copyright (c) 2009-2017 Bitcoin Core Developers
 
 Copyright (c) 2014-2017 Yank Core Developers
 

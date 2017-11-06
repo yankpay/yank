@@ -1,4 +1,4 @@
-Yank Core 0.12.0
+Yank Core 0.17.0
 =====================
 
 Setup

@@ -149,18 +149,6 @@ rm SHA256SUMS
   - After the pull request is merged, the website will automatically show the newest version within 15 minutes, as well
     as update the OS download links. Ping @saivann/@harding (saivann/harding on Freenode) in case anything goes wrong
 
-- Announce the release:
-
-  - Release sticky on yanktalk: https://yanktalk.org/index.php?board=1.0 ***TODO***
-
-  - Yank-development mailing list
-
-  - Update title of #yankpay on Freenode IRC
-
-  - Optionally reddit /r/Yankpay, ... but this will usually sort out itself
-
-- Notify Flare (?) ***TODO*** so that he can start building [https://launchpad.net/~yankpay/+archive/ubuntu/yank](the PPAs) ***TODO***
-
 - Add release notes for the new version to the directory `doc/release-notes` in git master
 
 - Celebrate

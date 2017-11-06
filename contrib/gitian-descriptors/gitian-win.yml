@@ -1,5 +1,5 @@
 ---
-name: "yank-win-0.12"
+name: "yank-win-0.17"
 enable_cache: true
 suites:
 - "precise"
@@ -18,7 +18,7 @@ packages:
 - "g++-mingw-w64"
 - "nsis"
 - "zip"
-reference_datetime: "2016-01-01 00:00:00"
+reference_datetime: "2017-01-01 00:00:00"
 remotes:
 - "url": "https://github.com/yankpay/yank.git"
   "dir": "yank"

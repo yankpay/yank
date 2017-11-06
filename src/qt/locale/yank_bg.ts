@@ -3749,8 +3749,8 @@ for example: alertnotify=echo %%s | mail -s "Dash Alert" admin@foo.com
         <translation>Whitelisted не могат да бъдат DoS забранени и техните транзакции ще бъдат винаги предадени, дори ако вече са в  mempool, полезно напр. за gateway</translation>
     </message>
     <message>
-        <source>(9999 could be used only on mainnet)</source>
-        <translation>(9999 може да бъде използван в основната мрежа)</translation>
+        <source>(7227 could be used only on mainnet)</source>
+        <translation>(7227 може да бъде използван в основната мрежа)</translation>
     </message>
     <message>
         <source>(default: %s)</source>
@@ -4167,8 +4167,8 @@ for example: alertnotify=echo %%s | mail -s "Dash Alert" admin@foo.com
         <translation>Невалиден частен ключ на Masternode. Моля вижте документацията.</translation>
     </message>
     <message>
-        <source>(must be 9999 for mainnet)</source>
-        <translation>(трябва да е 9999 за основната мрежа)</translation>
+        <source>(must be 7227 for mainnet)</source>
+        <translation>(трябва да е 7227 за основната мрежа)</translation>
     </message>
     <message>
         <source>Can't find random Masternode.</source>

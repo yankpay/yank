@@ -3757,8 +3757,8 @@ zum Beispiel: alertnotify=echo %%s | mail -s \"Dash Alert\" admin@foo.com</trans
         <translation>Erlaubte Gegenstellen können nicht wegen DoS ausgeschlossen werden und ihre Transaktionen werden immer weitergeleitet, sogar wenn sie schon im Memory-Pool sind. Dies ist z.B. für Gateways nützlich.</translation>
     </message>
     <message>
-        <source>(9999 could be used only on mainnet)</source>
-        <translation>(9999 kann nur im Standardnetz benutzt werden)</translation>
+        <source>(7227 could be used only on mainnet)</source>
+        <translation>(7227 kann nur im Standardnetz benutzt werden)</translation>
     </message>
     <message>
         <source>(default: %s)</source>
@@ -4176,8 +4176,8 @@ Dash Core wird heruntergefahren.</translation>
         <translation>Masternode-Geheimschlüssel (masternodeprivkey) ist ungültig. Siehe Dokumentation. </translation>
     </message>
     <message>
-        <source>(must be 9999 for mainnet)</source>
-        <translation>(muss für Standardnetz 9999 sein)</translation>
+        <source>(must be 7227 for mainnet)</source>
+        <translation>(muss für Standardnetz 7227 sein)</translation>
     </message>
     <message>
         <source>Can't find random Masternode.</source>

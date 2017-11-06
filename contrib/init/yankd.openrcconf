@@ -1,25 +1,25 @@
-# /etc/conf.d/dashd: config file for /etc/init.d/dashd
+# /etc/conf.d/yankd: config file for /etc/init.d/yankd
 
 # Config file location
-#BITCOIND_CONFIGFILE="/etc/dash/dash.conf"
+#BITCOIND_CONFIGFILE="/etc/yank/yank.conf"
 
 # What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
-#BITCOIND_PIDDIR="/var/run/dashd"
+#BITCOIND_PIDDIR="/var/run/yankd"
 
 # What filename to give the pidfile
-#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/dashd.pid"
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/yankd.pid"
 
-# Where to write dashd data (be mindful that the blockchain is large)
-#BITCOIND_DATADIR="/var/lib/dashd"
+# Where to write yankd data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/yankd"
 
-# User and group to own dashd process
-#BITCOIND_USER="dash"
-#BITCOIND_GROUP="dash"
+# User and group to own yankd process
+#BITCOIND_USER="yank"
+#BITCOIND_GROUP="yank"
 
-# Path to dashd executable
-#BITCOIND_BIN="/usr/bin/dashd"
+# Path to yankd executable
+#BITCOIND_BIN="/usr/bin/yankd"
 
-# Nice value to run dashd under
+# Nice value to run yankd under
 #BITCOIND_NICE=0
 
 # Additional options (avoid -conf and -datadir, use flags above)

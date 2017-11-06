@@ -1,2 +1,2 @@
-usr/local/bin/dashd usr/bin
-usr/local/bin/dash-cli usr/bin
+usr/local/bin/yankd usr/bin
+usr/local/bin/yank-cli usr/bin

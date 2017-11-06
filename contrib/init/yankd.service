@@ -1,15 +1,15 @@
 [Unit]
-Description=Dash's distributed currency daemon
+Description=Yank's distributed currency daemon
 After=network.target
 
 [Service]
-User=dash
-Group=dash
+User=yank
+Group=yank
 
 Type=forking
-PIDFile=/var/lib/dashd/dashd.pid
-ExecStart=/usr/bin/dashd -daemon -pid=/var/lib/dashd/dashd.pid \
--conf=/etc/dash/dash.conf -datadir=/var/lib/dashd -disablewallet
+PIDFile=/var/lib/yankd/yankd.pid
+ExecStart=/usr/bin/yankd -daemon -pid=/var/lib/yankd/yankd.pid \
+-conf=/etc/yank/yank.conf -datadir=/var/lib/yankd -disablewallet
 
 Restart=always
 PrivateTmp=true

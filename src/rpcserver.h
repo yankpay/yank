@@ -93,7 +93,7 @@ public:
 };
 
 /**
- * Dash RPC command dispatcher.
+ * Yank RPC command dispatcher.
  */
 class CRPCTable
 {

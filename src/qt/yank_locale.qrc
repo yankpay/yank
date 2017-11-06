@@ -1,20 +1,7 @@
 <!DOCTYPE RCC><RCC version="1.0">
     <qresource prefix="/translations">
-        <file alias="bg">locale/yank_bg.qm</file>
         <file alias="de">locale/yank_de.qm</file>
         <file alias="en">locale/yank_en.qm</file>
-        <file alias="es">locale/yank_es.qm</file>
-        <file alias="fi">locale/yank_fi.qm</file>
-        <file alias="fr">locale/yank_fr.qm</file>
-        <file alias="it">locale/yank_it.qm</file>
-        <file alias="ja">locale/yank_ja.qm</file>
-        <file alias="pl">locale/yank_pl.qm</file>
-        <file alias="pt">locale/yank_pt.qm</file>
         <file alias="ru">locale/yank_ru.qm</file>
-        <file alias="sk">locale/yank_sk.qm</file>
-        <file alias="sv">locale/yank_sv.qm</file>
-        <file alias="vi">locale/yank_vi.qm</file>
-        <file alias="zh_CN">locale/yank_zh_CN.qm</file>
-        <file alias="zh_TW">locale/yank_zh_TW.qm</file>
     </qresource>
 </RCC>

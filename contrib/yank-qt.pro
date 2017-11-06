@@ -642,19 +642,6 @@ SOURCES += src/activemasternode.cpp \
            src/leveldb/helpers/memenv/memenv_test.cc \
            src/secp256k1/src/java/org_bitcoin_NativeSecp256k1.c
 RESOURCES += src/qt/yank.qrc src/qt/yank_locale.qrc
-TRANSLATIONS += src/qt/locale/yank_bg.ts \
-                src/qt/locale/yank_de.ts \
+TRANSLATIONS += src/qt/locale/yank_de.ts \
                 src/qt/locale/yank_en.ts \
-                src/qt/locale/yank_es.ts \
-                src/qt/locale/yank_fi.ts \
-                src/qt/locale/yank_fr.ts \
-                src/qt/locale/yank_it.ts \
-                src/qt/locale/yank_ja.ts \
-                src/qt/locale/yank_pl.ts \
-                src/qt/locale/yank_pt.ts \
-                src/qt/locale/yank_ru.ts \
-                src/qt/locale/yank_sk.ts \
-                src/qt/locale/yank_sv.ts \
-                src/qt/locale/yank_vi.ts \
-                src/qt/locale/yank_zh_CN.ts \
-                src/qt/locale/yank_zh_TW.ts
+                src/qt/locale/yank_ru.ts

@@ -3,22 +3,9 @@ EXTRA_LIBRARIES += qt/libbitcoinqt.a
 
 # yank qt core #
 QT_TS = \
-  qt/locale/yank_bg.ts \
   qt/locale/yank_de.ts \
   qt/locale/yank_en.ts \
-  qt/locale/yank_es.ts \
-  qt/locale/yank_fi.ts \
-  qt/locale/yank_fr.ts \
-  qt/locale/yank_it.ts \
-  qt/locale/yank_ja.ts \
-  qt/locale/yank_pl.ts \
-  qt/locale/yank_pt.ts \
-  qt/locale/yank_ru.ts \
-  qt/locale/yank_sk.ts \
-  qt/locale/yank_sv.ts \
-  qt/locale/yank_vi.ts \
-  qt/locale/yank_zh_CN.ts \
-  qt/locale/yank_zh_TW.ts
+  qt/locale/yank_ru.ts
 
 QT_FORMS_UI = \
   qt/forms/addressbookpage.ui \

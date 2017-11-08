@@ -1564,10 +1564,10 @@ int64_t GetBlockValue(int nBits, int nHeight, const CAmount& nFees)
     nSubsidy *= COIN;
 
     if(Params().NetworkID() == CBaseChainParams::TESTNET){
-        for(int i = 46200; i <= nHeight; i += 210240) nSubsidy -= nSubsidy/14;
+        for(int i = 46200; i <= nHeight; i += 262800) nSubsidy -= nSubsidy/14;
     } else {
         // yearly decline of production by 7.1% per year, projected 21.3M coins max by year 2050.
-        for(int i = 210240; i <= nHeight; i += 210240) nSubsidy -= nSubsidy/14;
+        for(int i = 262800; i <= nHeight; i += 262800) nSubsidy -= nSubsidy/14;
     }
 
     /*
@@ -3049,17 +3049,17 @@ bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationState& sta
 
     // Check proof of work
 //    if ((!Params().SkipProofOfWorkCheck()) &&
-//       (block.nBits != GetNextWorkRequired(pindexPrev, &block)))
+//       (block.nBits != GetNextWorkRequired(pindexPrev)))
 //        return state.DoS(100, error("%s : incorrect proof of work", __func__),
 //                         REJECT_INVALID, "bad-diffbits");
     if(Params().NetworkID() == CBaseChainParams::TESTNET) {
-        if (block.nBits != GetNextWorkRequired(pindexPrev, &block))
+        if (block.nBits != GetNextWorkRequired(pindexPrev))
             return state.DoS(100, error("%s : incorrect proof of work at %d", __func__, nHeight),
                              REJECT_INVALID, "bad-diffbits");
     } else {
         // Check proof of work (Here for the architecture issues with DGW v1 and v2)
         if(nHeight <= 68589){
-            unsigned int nBitsNext = GetNextWorkRequired(pindexPrev, &block);
+            unsigned int nBitsNext = GetNextWorkRequired(pindexPrev);
             double n1 = ConvertBitsToDouble(block.nBits);
             double n2 = ConvertBitsToDouble(nBitsNext);
 
@@ -3067,7 +3067,7 @@ bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationState& sta
                 return state.DoS(100, error("%s : incorrect proof of work (DGW pre-fork) - %f %f %f at %d", __func__, abs(n1-n2), n1, n2, nHeight),
                                 REJECT_INVALID, "bad-diffbits");
         } else {
-            if (block.nBits != GetNextWorkRequired(pindexPrev, &block))
+            if (block.nBits != GetNextWorkRequired(pindexPrev))
                 return state.DoS(100, error("%s : incorrect proof of work at %d", __func__, nHeight),
                                 REJECT_INVALID, "bad-diffbits");
         }

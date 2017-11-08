@@ -104,15 +104,15 @@ public:
         pchMessageStart[2] = 0xcb;
         pchMessageStart[3] = 0x4f;
         vAlertPubKey = ParseHex("0466b6916465661ad39d2bc298058b9229fc34e50b87532bbf580c282bcba78b2e8b8d99897121e2fef51c2274bb57fffc172fab75171d2ca82c91feaf60efe1e0");
-        nDefaultPort = 9887;
+        nDefaultPort = 7227;
         bnProofOfWorkLimit = ~uint256(0) >> 20;  // Yank starting difficulty is 1 / 2^12
-        nSubsidyHalvingInterval = 210000;
+        nSubsidyHalvingInterval = 262800;
         nEnforceBlockUpgradeMajority = 750;
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 0;
         nTargetTimespan = 24 * 60 * 60; // Yank: 1 day
-        nTargetSpacing = 2.5 * 60; // Yank: 2.5 minutes
+        nTargetSpacing = 2 * 60; // Yank: 2 minutes
 
         /**
          * Build the genesis block. Note that the output of the genesis coinbase cannot
@@ -190,13 +190,13 @@ public:
         pchMessageStart[2] = 0xc7;
         pchMessageStart[3] = 0x4c;
         vAlertPubKey = ParseHex("04faa632781a7673b5c7057419bbf5263d474663cbc28f37682d6775f5d4e56d05ce68e5b385a57b042e5a02b15bba922c3e7217ebf199e0583ac3760b444243ba");
-        nDefaultPort = 19887;
+        nDefaultPort = 17779;
         nEnforceBlockUpgradeMajority = 51;
         nRejectBlockOutdatedMajority = 75;
         nToCheckBlockUpgradeMajority = 100;
         nMinerThreads = 0;
         nTargetTimespan = 24 * 60 * 60; // Yank: 1 day
-        nTargetSpacing = 2.5 * 60; // Yank: 2.5 minutes
+        nTargetSpacing = 2 * 60; // Yank: 2 minutes
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1509900003;
@@ -206,10 +206,6 @@ public:
         assert(hashGenesisBlock == uint256("0x00000b553911bd2a47b43097002841a924261d1d9c6fef6bb68385d976a5d9fd"));
 
         vFixedSeeds.clear();
-        vSeeds.clear();
-        /*vSeeds.push_back(CDNSSeedData("mycointest.io", "testnet-seed.mycointest.io"));
-        vSeeds.push_back(CDNSSeedData("Yank.qa", "testnet-seed.Yank.qa"));
-        *///legacy seeders
         vSeeds.clear();
 
         base58Prefixes[PUBKEY_ADDRESS] = list_of(139);                    // Testnet Yank addresses start with 'x' or 'y'
@@ -260,13 +256,13 @@ public:
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 1;
         nTargetTimespan = 24 * 60 * 60; // Yank: 1 day
-        nTargetSpacing = 2.5 * 60; // Yank: 2.5 minutes
+        nTargetSpacing = 2 * 60; // Yank: 2 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         genesis.nTime = 1509900006;
         genesis.nBits = 0x207fffff;
         genesis.nNonce = 0;
         hashGenesisBlock = genesis.GetHash();
-        nDefaultPort = 19883;
+        nDefaultPort = 17774;
         assert(hashGenesisBlock == uint256("0x46862b7b534d6a6b9bdc064d785de536c3f7e08842f8321e53885c194c438ac3"));
 
         vFixedSeeds.clear(); //! Regtest mode doesn't have any fixed seeds.

@@ -48,7 +48,7 @@ static const CAmount DEFAULT_TRANSACTION_MAXFEE = 0.2 * COIN; // "smallest denom
 //! -maxtxfee will warn if called with a higher fee than this amount (in satoshis)
 static const CAmount nHighTransactionMaxFeeWarning = 100 * nHighTransactionFeeWarning;
 //! Largest (in bytes) free transaction we're willing to create
-static const unsigned int MAX_FREE_TRANSACTION_CREATE_SIZE = 1000;
+static const unsigned int MAX_FREE_TRANSACTION_CREATE_SIZE = 2048;
 
 class CAccountingEntry;
 class CCoinControl;
@@ -901,7 +901,7 @@ public:
             const CTxIn vin = CTxIn(hashTx, i);
 
             if(pwallet->IsSpent(hashTx, i) || pwallet->IsLockedCoin(hashTx, i)) continue;
-            if(fMasterNode && vout[i].nValue == 1000*COIN) continue; // do not count MN-like outputs
+            if(fMasterNode && vout[i].nValue == 999*COIN) continue; // do not count MN-like outputs
 
             const int rounds = pwallet->GetInputDarksendRounds(vin);
             if(rounds >=-2 && rounds < nDarksendRounds) {

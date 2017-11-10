@@ -48,7 +48,7 @@ class CActiveMasternode;
 #define DARKSEND_RELAY_SIG                3
 
 static const int64_t DARKSEND_COLLATERAL = (0.01*COIN);
-static const int64_t DARKSEND_POOL_MAX = (999.99*COIN);
+static const int64_t DARKSEND_POOL_MAX = (999999.99*COIN);
 
 extern CDarksendPool darkSendPool;
 extern CDarkSendSigner darkSendSigner;
@@ -246,7 +246,7 @@ public:
 class CDarkSendSigner
 {
 public:
-    /// Is the inputs associated with this public key? (and there is 1000 YANK - checking if valid masternode)
+    /// Is the inputs associated with this public key? (and there is 999 YANK - checking if valid masternode)
     bool IsVinAssociatedWithPubkey(CTxIn& vin, CPubKey& pubkey);
     /// Set the private/public key values, returns true if successful
     bool SetKey(std::string strSecret, std::string& errorMessage, CKey& key, CPubKey& pubkey);

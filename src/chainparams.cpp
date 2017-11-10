@@ -32,10 +32,6 @@ struct SeedSpec6 {
 //! Convert the pnSeeds6 array into usable address objects.
 static void convertSeed6(std::vector<CAddress> &vSeedsOut, const SeedSpec6 *data, unsigned int count)
 {
-    // It'll only connect to one or two seed nodes because once it connects,
-    // it'll get a pile of addresses with newer timestamps.
-    // Seed nodes are given a random 'last seen time' of between one and two
-    // weeks ago.
     const int64_t nOneWeek = 7*24*60*60;
     for (unsigned int i = 0; i < count; i++)
     {
@@ -46,14 +42,6 @@ static void convertSeed6(std::vector<CAddress> &vSeedsOut, const SeedSpec6 *data
         vSeedsOut.push_back(addr);
     }
 }
-
-/**
- * What makes a good checkpoint block?
- * + Is surrounded by blocks with reasonable timestamps
- *   (no blocks before with a timestamp after, none after with
- *    timestamp before)
- * + Contains no strange transactions
- */
 
 static Checkpoints::MapCheckpoints mapCheckpoints =
         boost::assign::map_list_of
@@ -94,15 +82,11 @@ public:
     CMainParams() {
         networkID = CBaseChainParams::MAIN;
         strNetworkID = "main";
-        /** 
-         * The message start string is designed to be unlikely to occur in normal data.
-         * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
-         * a large 4-byte int at any alignment.
-         */
-        pchMessageStart[0] = 0x1c;
-        pchMessageStart[1] = 0xbd;
-        pchMessageStart[2] = 0xcb;
-        pchMessageStart[3] = 0x4f;
+
+        pchMessageStart[0] = 0xbf;
+        pchMessageStart[1] = 0x0c;
+        pchMessageStart[2] = 0x6b;
+        pchMessageStart[3] = 0xbd;
         vAlertPubKey = ParseHex("0466b6916465661ad39d2bc298058b9229fc34e50b87532bbf580c282bcba78b2e8b8d99897121e2fef51c2274bb57fffc172fab75171d2ca82c91feaf60efe1e0");
         nDefaultPort = 7227;
         bnProofOfWorkLimit = ~uint256(0) >> 20;  // Yank starting difficulty is 1 / 2^12
@@ -185,10 +169,10 @@ public:
     CTestNetParams() {
         networkID = CBaseChainParams::TESTNET;
         strNetworkID = "test";
-        pchMessageStart[0] = 0x1f;
-        pchMessageStart[1] = 0xbc;
-        pchMessageStart[2] = 0xc7;
-        pchMessageStart[3] = 0x4c;
+        pchMessageStart[0] = 0xce;
+        pchMessageStart[1] = 0xe2;
+        pchMessageStart[2] = 0xca;
+        pchMessageStart[3] = 0xff;
         vAlertPubKey = ParseHex("04faa632781a7673b5c7057419bbf5263d474663cbc28f37682d6775f5d4e56d05ce68e5b385a57b042e5a02b15bba922c3e7217ebf199e0583ac3760b444243ba");
         nDefaultPort = 17779;
         nEnforceBlockUpgradeMajority = 51;
@@ -246,10 +230,10 @@ public:
     CRegTestParams() {
         networkID = CBaseChainParams::REGTEST;
         strNetworkID = "regtest";
-        pchMessageStart[0] = 0xdc;
-        pchMessageStart[1] = 0xc3;
-        pchMessageStart[2] = 0xb3;
-        pchMessageStart[3] = 0x4c;
+        pchMessageStart[0] = 0xfc;
+        pchMessageStart[1] = 0xc1;
+        pchMessageStart[2] = 0xb7;
+        pchMessageStart[3] = 0xdc;
         nSubsidyHalvingInterval = 150;
         nEnforceBlockUpgradeMajority = 750;
         nRejectBlockOutdatedMajority = 950;

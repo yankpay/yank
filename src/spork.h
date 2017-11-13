@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2012 The Dash developers
 // Copyright (c) 2017 The Yank developers
-// Distributed under the MIT/X11 software license, see the accompanying
+// Distributed under the MIT/X13 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef SPORK_H
@@ -76,7 +76,7 @@ public:
     int64_t nTimeSigned;
 
     uint256 GetHash(){
-        uint256 n = HashX11(BEGIN(nSporkID), END(nTimeSigned));
+        uint256 n = HashX13(BEGIN(nSporkID), END(nTimeSigned));
         return n;
     }
 

@@ -48,20 +48,20 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
         (  0, uint256("0x000003b18f75b241ffbfb6c77369b318784a0871d658fe5f8c3a5c7ba8b91134"))
         ;
 static const Checkpoints::CCheckpointData data = {
-        &mapCheckpoints, 1510538400, 0, 2800
+        &mapCheckpoints, 1510587000, 0, 2800
     };
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
         boost::assign::map_list_of
-        ( 0, uint256("00000f17db90aa72a41191a274363e695f490109d6f21a1a0bd5c73d4808aa00"))
+        ( 0, uint256("00000352b79abc0300554ce09a91e5fc65cc359be21adfe845a55a824b3340d1"))
         ;
 static const Checkpoints::CCheckpointData dataTestnet = {
-        &mapCheckpointsTestnet, 1510538410, 0, 500
+        &mapCheckpointsTestnet, 1510587010, 0, 500
     };
 
 static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
         boost::assign::map_list_of
-        ( 0, uint256("0x5ba838225524104f28bd8531bf4429b73650288246b4906883833b838a7f9a23"))
+        ( 0, uint256("0x1f7b4b3eac837de93ebf39ad190348d8e81d4b5623f5c55586821acfc2dc3a65"))
         ;
 static const Checkpoints::CCheckpointData dataRegtest = {
         &mapCheckpointsRegtest, 0, 0, 0
@@ -89,7 +89,7 @@ public:
         nTargetSpacing = 2 * 60; // Yank: 2 minutes
 
 
-        const char* pszTimestamp = "start yank 11/13/2017 02/00";
+        const char* pszTimestamp = "start yank 11/13/2017 15/30";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -100,13 +100,13 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime    = 1510538400;
+        genesis.nTime    = 1510587000;
         genesis.nBits    = 0x1e0ffff0;
-        genesis.nNonce   = 1923588;
+        genesis.nNonce   = 203360;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x000003b18f75b241ffbfb6c77369b318784a0871d658fe5f8c3a5c7ba8b91134"));
-        assert(genesis.hashMerkleRoot == uint256("0x8a0eba27de8cf4384d484755ba33c68a8c0fc703c1ef7cbaf093d28907aea8fc"));
+        assert(hashGenesisBlock == uint256("0x0000033d5d6b6cdcc147685301a270808c5499a8d22cbd7b955a67094f7e75ef"));
+        assert(genesis.hashMerkleRoot == uint256("0xc8280024e8f0dfb769867b7ff419fa878a49b06ee4c58f4af28e6e36c09b412a"));
 
         vSeeds.clear();
 
@@ -164,11 +164,11 @@ public:
         nTargetSpacing = 2 * 60; // Yank: 2 minutes
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1510538410;
-        genesis.nNonce = 97425;
+        genesis.nTime = 1510587010;
+        genesis.nNonce = 19842;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x00000f17db90aa72a41191a274363e695f490109d6f21a1a0bd5c73d4808aa00"));
+        assert(hashGenesisBlock == uint256("0x00000352b79abc0300554ce09a91e5fc65cc359be21adfe845a55a824b3340d1"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -223,12 +223,12 @@ public:
         nTargetTimespan = 24 * 60 * 60; // Yank: 1 day
         nTargetSpacing = 2 * 60; // Yank: 2 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
-        genesis.nTime = 1510538420;
+        genesis.nTime = 1510587020;
         genesis.nBits = 0x207fffff;
-        genesis.nNonce = 2;
+        genesis.nNonce = 0;
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 17774;
-        assert(hashGenesisBlock == uint256("0x5ba838225524104f28bd8531bf4429b73650288246b4906883833b838a7f9a23"));
+        assert(hashGenesisBlock == uint256("0x1f7b4b3eac837de93ebf39ad190348d8e81d4b5623f5c55586821acfc2dc3a65"));
 
         vFixedSeeds.clear(); //! Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();  //! Regtest mode doesn't have any DNS seeds.

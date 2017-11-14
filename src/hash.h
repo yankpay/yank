@@ -71,8 +71,8 @@ GLOBAL sph_cubehash512_context  z_cubehash;
 GLOBAL sph_shavite512_context   z_shavite;
 GLOBAL sph_simd512_context      z_simd;
 GLOBAL sph_echo512_context      z_echo;
-GLOBAL sph_hamsi512_context      z_hamsi;
-GLOBAL sph_fugue512_context      z_fugue;
+GLOBAL sph_hamsi512_context     z_hamsi;
+GLOBAL sph_fugue512_context     z_fugue;
 
 #define fillz() do { \
     sph_blake512_init(&z_blake); \

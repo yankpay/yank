@@ -48,15 +48,15 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
         (  0, uint256("0x000003b18f75b241ffbfb6c77369b318784a0871d658fe5f8c3a5c7ba8b91134"))
         ;
 static const Checkpoints::CCheckpointData data = {
-        &mapCheckpoints, 1510587000, 0, 2800
+        &mapCheckpoints, 1510711200, 0, 2800
     };
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
         boost::assign::map_list_of
-        ( 0, uint256("00000352b79abc0300554ce09a91e5fc65cc359be21adfe845a55a824b3340d1"))
+        ( 0, uint256("000004b664f6b59599188ad34dee2e2e724882917de73a1a98692b7240b4b331"))
         ;
 static const Checkpoints::CCheckpointData dataTestnet = {
-        &mapCheckpointsTestnet, 1510587010, 0, 500
+        &mapCheckpointsTestnet, 1510711210, 0, 500
     };
 
 static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
@@ -85,11 +85,11 @@ public:
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 0;
-        nTargetTimespan = 24 * 60 * 60; // Yank: 1 day
-        nTargetSpacing = 2 * 60; // Yank: 2 minutes
+        nTargetTimespan = (24 * 60 * 60) / 10; // Yank: 1 day
+        nTargetSpacing = (2 * 60) / 10; // Yank: 2 minutes
 
 
-        const char* pszTimestamp = "start yank 11/13/2017 15/30";
+        const char* pszTimestamp = "start yank 11/15/2017 02/00";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -100,13 +100,13 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime    = 1510587000;
+        genesis.nTime    = 1510711200;
         genesis.nBits    = 0x1e0ffff0;
-        genesis.nNonce   = 203360;
+        genesis.nNonce   = 913910;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x0000033d5d6b6cdcc147685301a270808c5499a8d22cbd7b955a67094f7e75ef"));
-        assert(genesis.hashMerkleRoot == uint256("0xc8280024e8f0dfb769867b7ff419fa878a49b06ee4c58f4af28e6e36c09b412a"));
+        assert(hashGenesisBlock == uint256("0x00000b7eab89be2ad406c2cc14379d9da2686968d31baee9b665e87ed2375b95"));
+        assert(genesis.hashMerkleRoot == uint256("0xbf417355675f9c025ffd9f635bde71d3fbca7457b1fc6d9b2a457afc85ca4c73"));
 
         vSeeds.clear();
 
@@ -160,15 +160,15 @@ public:
         nRejectBlockOutdatedMajority = 75;
         nToCheckBlockUpgradeMajority = 100;
         nMinerThreads = 0;
-        nTargetTimespan = 24 * 60 * 60; // Yank: 1 day
-        nTargetSpacing = 2 * 60; // Yank: 2 minutes
+        nTargetTimespan = (24 * 60 * 60) / 10; // Yank: 1 day
+        nTargetSpacing = (2 * 60) / 10; // Yank: 2 minutes
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1510587010;
-        genesis.nNonce = 19842;
+        genesis.nTime = 1510711210;
+        genesis.nNonce = 2761439;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x00000352b79abc0300554ce09a91e5fc65cc359be21adfe845a55a824b3340d1"));
+        assert(hashGenesisBlock == uint256("0x000004b664f6b59599188ad34dee2e2e724882917de73a1a98692b7240b4b331"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -220,15 +220,15 @@ public:
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 1;
-        nTargetTimespan = 24 * 60 * 60; // Yank: 1 day
-        nTargetSpacing = 2 * 60; // Yank: 2 minutes
+        nTargetTimespan = (24 * 60 * 60) / 10; // Yank: 1 day
+        nTargetSpacing = (2 * 60) / 10; // Yank: 2 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
-        genesis.nTime = 1510587020;
+        genesis.nTime = 1510711220;
         genesis.nBits = 0x207fffff;
-        genesis.nNonce = 0;
+        genesis.nNonce = 1;
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 17774;
-        assert(hashGenesisBlock == uint256("0x1f7b4b3eac837de93ebf39ad190348d8e81d4b5623f5c55586821acfc2dc3a65"));
+        assert(hashGenesisBlock == uint256("0x1ff5fab3dcb8ae77f55979824f77be55b6744e8d7b9c06ea4c21e49df904bf22"));
 
         vFixedSeeds.clear(); //! Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();  //! Regtest mode doesn't have any DNS seeds.

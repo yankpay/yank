@@ -1537,20 +1537,8 @@ double ConvertBitsToDouble(unsigned int nBits)
 
 int64_t GetBlockValue(int nBits, int nHeight, const CAmount& nFees)
 {
-    double dDiff = (double)0x0000ffff / (double)(nBits & 0x00ffffff);
+    double dDiff = ConvertBitsToDouble(nBits);
 
-    dDiff = ConvertBitsToDouble(nBits);
-
-    LogPrintf("+++Height\n");
-    LogPrintf(nHeight);
-    LogPrintf("---Height\n");
-    LogPrintf("+++Diff\n");
-    LogPrintf(nDiff);
-    LogPrintf("---Diff\n");
-    LogPrintf("+++Bits\n");
-    LogPrintf(nBits);
-    LogPrintf("---Bits\n");
-    
     int64_t nSubsidy = 0;
 
     if(nHeight >= 11160 && dDiff > 75) {
@@ -1563,11 +1551,6 @@ int64_t GetBlockValue(int nBits, int nHeight, const CAmount& nFees)
         if (nSubsidy > 30) nSubsidy = 30;
         if (nSubsidy < 1) nSubsidy = 1;
     }
-
-    LogPrintf("+++Subsidy\n");
-    LogPrintf(nSubsidy);
-    LogPrintf("---Subsidy\n");
-    
 
     nSubsidy *= COIN;
     for(int i = 262800; i <= nHeight; i += 262800) nSubsidy -= nSubsidy/14;

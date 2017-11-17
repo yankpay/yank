@@ -88,7 +88,7 @@ static void CheckBlockIndex();
 /** Constant stuff for coinbase transactions we create: */
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "DarkCoin Signed Message:\n";
+const string strMessageMagic = "Yank Signed Message:\n";
 
 // Internal stuff
 namespace {
@@ -1538,22 +1538,23 @@ double ConvertBitsToDouble(unsigned int nBits)
 int64_t GetBlockValue(int nBits, int nHeight, const CAmount& nFees)
 {
     double dDiff = ConvertBitsToDouble(nBits);
-
+    LogPrint("Diff", dDiff);
     int64_t nSubsidy = 0;
 
-    if(nHeight >= 11160 && dDiff > 75) {
-        // 2222222/(((x+2600)/9)^2)
-        nSubsidy = (2222222.0 / (pow((dDiff+2600.0)/9.0,2.0)));
-        if (nSubsidy > 15) nSubsidy = 15;
+    if(nHeight >= 22320) {
+        // 2222222/(((x+2600)/6)^2)
+        nSubsidy = (2222222.0 / (pow((dDiff+2600.0)/6.0,2.0)));
+        if (nSubsidy > 10) nSubsidy = 10;
         if (nSubsidy < 1) nSubsidy = 1;
     } else {
-        nSubsidy = (1111.0 / (pow((dDiff+1.0),2.0)));
-        if (nSubsidy > 30) nSubsidy = 30;
+        // 11111/((x+1)^2)
+        nSubsidy = (11111.0 / (pow((dDiff+1.0),2.0)));
+        if (nSubsidy > 50) nSubsidy = 50;
         if (nSubsidy < 1) nSubsidy = 1;
     }
 
     nSubsidy *= COIN;
-    for(int i = 262800; i <= nHeight; i += 262800) nSubsidy -= nSubsidy/14;
+    for(int i = 262800; i <= nHeight; i += 262800) nSubsidy -= nSubsidy/90;
     return nSubsidy + nFees;
 }
 

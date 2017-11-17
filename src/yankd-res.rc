@@ -17,13 +17,13 @@ BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
             VALUE "CompanyName",        "Yank"
-            VALUE "FileDescription",    "Darkcoind (OSS daemon/client for Yank)"
+            VALUE "FileDescription",    "Yankd (OSS daemon/client for Yank)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
             VALUE "InternalName",       "yankd"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT/X13 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
             VALUE "OriginalFilename",   "yankd.exe"
-            VALUE "ProductName",        "Darkcoind"
+            VALUE "ProductName",        "Yankd"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END

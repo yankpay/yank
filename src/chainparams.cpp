@@ -80,7 +80,7 @@ public:
         vAlertPubKey = ParseHex("0466b6916465661ad39d2bc298058b9229fc34e50b87532bbf580c282bcba78b2e8b8d99897121e2fef51c2274bb57fffc172fab75171d2ca82c91feaf60efe1e0");
         nDefaultPort = 7227;
         bnProofOfWorkLimit = ~uint256(0) >> 20;  // Yank starting difficulty is 1 / 2^12
-        nSubsidyHalvingInterval = 262800;
+        nSubsidyHalvingInterval = 20000;
         nEnforceBlockUpgradeMajority = 750;
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;

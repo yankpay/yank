@@ -1535,35 +1535,24 @@ double ConvertBitsToDouble(unsigned int nBits)
     return dDiff;
 }
 
-int64_t GetBlockValue(int nBits, int nHeight, const CAmount& nFees)
+int64_t GetBlockValue(int nHeight, const CAmount& nFees)
 {
-    double dDiff = ConvertBitsToDouble(nBits);
-    int64_t nSubsidy = 0;
+    int64_t nSubsidy = 100;
 
-    LogPrintf("diff value: %s\n", nBits);
-    LogPrintf("height value: %s\n", nHeight);
-
-    //22320
-
-    if(nHeight >= 777) {
-        // 2222222/(((x+2600)/6)^2)
-        nSubsidy = (2222222.0 / (pow((dDiff+2600.0)/6.0,2.0)));
-        LogPrintf("subsidy value: %s\n", nSubsidy);
-        if (nSubsidy > 10) nSubsidy = 10;
-        if (nSubsidy < 1) nSubsidy = 1;
+    if (nHeight <= 5000) {
+        nSubsidy = nSubsidy*1;
+    } else if ((nHeight > 5000) & (nHeight <= 10000)) {
+        nSubsidy = nSubsidy*0.5;
+    } else if ((nHeight > 10000) & (nHeight <= 15000)) {
+        nSubsidy = nSubsidy*0.25;
+    } else if ((nHeight > 15000) & (nHeight <= 20000)) {
+        nSubsidy = nSubsidy*0.125;
     } else {
-        // 11111/((x+1)^2)
-        nSubsidy = (11111.0 / (pow((dDiff+1.0),2.0)));
-        LogPrintf("subsidy value: %s\n", nSubsidy);
-        if (nSubsidy > 50) nSubsidy = 50;
-        if (nSubsidy < 1) nSubsidy = 1;
+        nSubsidy = nSubsidy*0.0625;
     }
 
     nSubsidy *= COIN;
-
-    //262800
-
-    for(int i = 777; i <= nHeight; i += 777) nSubsidy -= nSubsidy/90;
+    for(int i = 20000*2; i <= nHeight; i += 20000) nSubsidy -= nSubsidy/999;
     return nSubsidy + nFees;
 }
 
@@ -2089,10 +2078,10 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     int64_t nTime1 = GetTimeMicros(); nTimeConnect += nTime1 - nTimeStart;
     LogPrint("bench", "      - Connect %u transactions: %.2fms (%.3fms/tx, %.3fms/txin) [%.2fs]\n", (unsigned)block.vtx.size(), 0.001 * (nTime1 - nTimeStart), 0.001 * (nTime1 - nTimeStart) / block.vtx.size(), nInputs <= 1 ? 0 : 0.001 * (nTime1 - nTimeStart) / (nInputs-1), nTimeConnect * 0.000001);
 
-    if(!IsBlockValueValid(block, GetBlockValue(pindex->pprev->nBits, pindex->pprev->nHeight, nFees))){
+    if(!IsBlockValueValid(block, GetBlockValue(pindex->pprev->nHeight, nFees))){
         return state.DoS(100,
                          error("ConnectBlock() : coinbase pays too much (actual=%d vs limit=%d)",
-                               block.vtx[0].GetValueOut(), GetBlockValue(pindex->pprev->nBits, pindex->pprev->nHeight, nFees)),
+                               block.vtx[0].GetValueOut(), GetBlockValue(pindex->pprev->nHeight, nFees)),
                                REJECT_INVALID, "bad-cb-amount");
     }
 

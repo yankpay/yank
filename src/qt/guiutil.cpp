@@ -813,8 +813,8 @@ QString loadStyleSheet()
     QSettings settings;
     QString cssName;
     
-    cssName = QString(":/css/drkblue");  
-    settings.setValue("theme", "drkblue");
+    cssName = QString(":/css/theme");  
+    settings.setValue("theme", "theme");
     
     QFile qFile(cssName);      
     if (qFile.open(QFile::ReadOnly)) {
